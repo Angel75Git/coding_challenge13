@@ -1,0 +1,1 @@
+#In this challenge,the interactive employee management dashboard facilitates the dynamic management of employee records within a company. The dashboard will allow the participant to implement features for adding, updating, and removing employee cards through an intuitive interface.
