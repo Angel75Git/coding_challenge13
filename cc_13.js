@@ -19,6 +19,13 @@ function createCards(name, position) {
     const removeEmp = document.createElement("button");
     removeEmp.textContent = "Remove";
 
+    //Using Remove Child + stopPropagation
+    removeEmp.addEventListener("click", function (event){
+        event.stopPropagation();
+        container.removeChild(card);
+      
+    })
+
     //Appending Elements to parents
     card.appendChild(heading);
     card.appendChild(empPos);
@@ -41,3 +48,10 @@ employeeCards.forEach(card => {
     //Extra border around cards
     card.style.border = "1px solid black"
 })
+
+//Task 4
+const container = document.getElementById("employeeContainer");
+//Logging a message whenever employeeContainer clicked
+container.addEventListener("click", function () {
+    console.log("Employee card clicked!");
+});
