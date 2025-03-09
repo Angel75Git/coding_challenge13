@@ -52,6 +52,7 @@ employeeCards.forEach(card => {
 //Task 4
 const container = document.getElementById("employeeContainer");
 //Logging a message whenever employeeContainer clicked
-container.addEventListener("click", function () {
+container.addEventListener("click", function (event) {
+    event.stopPropagation();
     console.log("Employee card clicked!");
 });
