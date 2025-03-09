@@ -31,7 +31,48 @@ function createCards(name, position) {
     card.appendChild(empPos);
     card.appendChild(removeEmp);
     container.appendChild(card);  
-}
+
+    //Double Click event:
+    card.addEventListener("dblclick", function(){
+        editCards(card, heading, empPos);
+    })
+
+    //Function for editing cards
+//Task 5
+function editCards(card, heading, empPos){
+    //Name input 
+    const inputBox = document.createElement("input")
+    inputBox.value = heading.textContent;
+    
+    //Position input
+    const inputPos = document.createElement("input")
+    inputPos.value = empPos.textContent.replace("I work as a ", "").replace("at VISION Corp.", "") 
+    
+    //Save Button
+    const saveBtn = document.createElement("button");
+    saveBtn.textContent = "Submit";
+    
+    card.innerHTML = "";
+//Appending new values to div
+    card.appendChild(inputBox)
+    card.appendChild(inputPos)
+    card.appendChild(saveBtn)
+   
+    //Funcitonality double click
+    saveBtn.addEventListener("click", function () {
+        heading.textContent = inputBox.value;
+        empPos.textContent = `I work as a ${inputPos.value} at VISION Corp.`;
+        
+        card.innerHTML = ""
+        //append new values to card
+        card.appendChild(heading);
+        card.appendChild(empPos);
+        card.appendChild(saveBtn)
+        
+})
+}};
+
+
 
 // Test Cases:
 createCards("John Doe", "Software Engineer");
