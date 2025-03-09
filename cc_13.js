@@ -18,9 +18,7 @@ function createCards(name, position) {
     //Adding a remove button as well as function to delete employee card
     const removeEmp = document.createElement("button");
     removeEmp.textContent = "Remove";
-    removeEmp.addEventListener("click", function () {
-        container.removeChild(card);
-    });
+
     //Appending Elements to parents
     card.appendChild(heading);
     card.appendChild(empPos);
