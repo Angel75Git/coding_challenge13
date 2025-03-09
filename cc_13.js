@@ -25,7 +25,7 @@ function createCards(name, position) {
     card.appendChild(heading);
     card.appendChild(empPos);
     card.appendChild(removeEmp);
-    container.appendChild(card);
+    container.appendChild(card);  
 }
 
 // Test Cases:
@@ -33,3 +33,13 @@ createCards("John Doe", "Software Engineer");
 createCards("Abel Green", "Data Analyst");
 createCards("Adam Brown", "Senior Manager");
 createCards("Luis Bays", " Electrical Engineer");
+
+//Task 3
+//Converting Nodelist to array
+const employeeCards = Array.from(document.querySelectorAll(".employee-card"));
+employeeCards.forEach(card => {
+    //Adding a light blue background
+    card.style.background = "lightblue"
+    //Extra border around cards
+    card.style.border = "1px solid black"
+})
